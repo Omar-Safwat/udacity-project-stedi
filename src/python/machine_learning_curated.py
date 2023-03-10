@@ -40,14 +40,13 @@ SqlQuery0 = """
 SELECT 
     stt.serialnumber,
     stt.sensorreadingtime,
-    AVG(stt.distancefromobject), 
-    AVG(act.x) AS x, 
-    AVG(act.y) AS y, 
-    AVG(act.z) AS z, 
+    stt.distancefromobject, 
+    x, 
+    y, 
+    z, 
 FROM step_trainer_trusted stt
 JOIN accelerometer_trusted act
-ON stt.sensorreadingtime = act.timestamp
-GROUP BY stt.serialnumber, stt.sensorreadingtime;
+ON stt.sensorreadingtime = CAST(act.timestamp AS VARCHAR);
 
 """
 SQLQuery_node1678261971818 = sparkSqlQuery(

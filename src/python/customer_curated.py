@@ -39,7 +39,7 @@ AccelerometerTrusted_node1678178807338 = glueContext.create_dynamic_frame.from_c
 SqlQuery0 = """
 SELECT c.*
 FROM customer_trusted c 
-JOIN 
+INNER JOIN 
     (
     SELECT DISTINCT user FROM accelerometer_trusted
     ) AS a 

@@ -48,7 +48,7 @@ Customercurated_node1678180550487 = glueContext.create_dynamic_frame.from_option
 # Script generated for node Inner join after distinct
 SqlQuery0 = """
 SELECT stl.* FROM step_trainer_landing stl 
-JOIN 
+INNUR JOIN 
 (
     SELECT DISTINCT serialnumber FROM customer_curated
 ) AS cc
